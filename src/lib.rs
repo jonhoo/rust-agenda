@@ -111,6 +111,36 @@ impl Progress {
         }
     }
 
+    pub fn warn<D: fmt::Display>(&self, msg: D) {
+        let mut t = term::stderr().unwrap();
+
+        match self {
+            Progress::Section => {
+                t.fg(term::color::YELLOW).unwrap();
+                t.attr(term::Attr::Bold).unwrap();
+                writeln!(t, ":: WARN: {}", msg).unwrap();
+                t.reset().unwrap();
+            }
+            Progress::Headline => {
+                t.fg(term::color::YELLOW).unwrap();
+                t.attr(term::Attr::Bold).unwrap();
+                write!(t, "==> WARN: ").unwrap();
+
+                t.reset().unwrap();
+                t.attr(term::Attr::Bold).unwrap();
+                writeln!(t, "{}", msg).unwrap();
+
+                t.reset().unwrap();
+            }
+            Progress::Item | Progress::Bottom => {
+                t.fg(term::color::YELLOW).unwrap();
+                t.attr(term::Attr::Bold).unwrap();
+                writeln!(t, "  -> {}", msg).unwrap();
+                t.reset().unwrap();
+            }
+        }
+    }
+
     pub fn single<D: fmt::Display>(&self, name: D) {
         self.clone().enter(name).leave();
     }
