@@ -1,5 +1,5 @@
 [package]
-name = "agenda"
+name = "cli-agenda"
 version = "0.1.0"
 
 description = "Simple API for writing out progress in CLI applications"

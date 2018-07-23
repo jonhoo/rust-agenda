@@ -1,7 +1,7 @@
-extern crate agenda;
+extern crate cli_agenda;
 
 fn main() {
-    let p = agenda::start();
+    let p = cli_agenda::start();
     let p = p.enter("Set up network");
     p.single("Create Virtual Private Cloud");
     p.single("Attach internet gateway");
