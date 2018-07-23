@@ -1,7 +1,18 @@
 [package]
 name = "agenda"
 version = "0.1.0"
+
+description = "Simple API for writing out progress in CLI applications"
+
 authors = ["Jon Gjengset <jon@thesquareplanet.com>"]
+
+homepage = "https://github.com/jonhoo/rust-agenda"
+repository = "https://github.com/jonhoo/rust-agenda.git"
+
+keywords = ["cli", "terminal"]
+categories = ["command-line-interface"]
+
+license = "MIT/Apache-2.0"
 
 [dependencies]
 term = "0.5"
