@@ -1,6 +1,6 @@
 [package]
 name = "cli-agenda"
-version = "0.1.1"
+version = "0.1.2"
 
 description = "Simple API for writing out progress in CLI applications"
 
@@ -13,6 +13,9 @@ keywords = ["cli", "terminal"]
 categories = ["command-line-interface"]
 
 license = "MIT/Apache-2.0"
+
+[badges]
+maintenance = { status = "as-is" }
 
 [dependencies]
 term = "0.5"
